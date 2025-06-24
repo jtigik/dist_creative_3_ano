@@ -11,7 +11,7 @@
 
 ## 1. Contextualização
 
-O plano de trabalho é voltado para alunos do 3º ano do Ensino Médio, com foco na Programação Orientada a Objetos (POO) utilizando Java. A abordagem combina teoria e prática, enfatizando projetos práticos que simulam demandas reais do mercado, alinhados ao perfil profissionalizante do SENAC. O curso abrange desde os fundamentos de Java e POO até o desenvolvimento de aplicações práticas, utilizando ferramentas como IntelliJ IDEA ou Eclipse. O objetivo é preparar os alunos para criar programas robustos, aplicando conceitos como encapsulamento, herança, polimorfismo e abstração.
+O plano de trabalho é voltado para alunos do 3º ano do Ensino Médio, com foco na Programação Orientada a Objetos (POO) utilizando Java. A abordagem combina teoria e prática, enfatizando projetos práticos que simulam demandas reais do mercado, alinhados ao perfil profissionalizante do SENAC. O curso abrange desde os fundamentos de Java e POO até o desenvolvimento de aplicações práticas, utilizando ferramentas como IntelliJ IDEA, Visual Studio Code ou Eclipse. O objetivo é preparar os alunos para criar programas robustos, aplicando conceitos como encapsulamento, herança, polimorfismo e abstração.
 
 ---
 
@@ -81,7 +81,7 @@ O conteúdo é estruturado em módulos que abordam os fundamentos de Java, os pi
 - **Aulas Teórico-Práticas:** Exposição de conceitos com exemplos práticos, utilizando um IDE (IntelliJ IDEA ou Eclipse).  
 - **Projetos Práticos:** Desenvolvimento de programas reais, com entregas semanais.  
 - **Aprendizado Baseado em Projetos (PBL):** Alunos trabalharão em grupos para resolver desafios de programação.  
-- **Ferramentas:** JDK, IntelliJ IDEA/Eclipse, computadores com acesso à internet.  
+- **Ferramentas:** JDK, IntelliJ IDEA/VSCode/Eclipse, computadores com acesso à internet.  
 - **Atividades Colaborativas:** Dinâmicas de feedback entre pares e apresentações de projetos.  
 - **Acompanhamento Individual:** Orientação para dúvidas e apoio no desenvolvimento de projetos.
 
@@ -139,7 +139,7 @@ O conteúdo é estruturado em módulos que abordam os fundamentos de Java, os pi
 
 - Computadores com acesso à internet e navegadores atualizados.  
 - JDK (Java Development Kit) instalado.  
-- IDE (IntelliJ IDEA ou Eclipse recomendado).  
+- IDE (IntelliJ IDEA, Visual Studio Code ou Eclipse).  
 - Materiais de apoio: slides, tutoriais em vídeo, exemplos de códigos.  
 - Laboratório de informática com projetor para aulas expositivas.
 
