@@ -52,6 +52,10 @@ public class ConversorMultifuncional extends JFrame {
         labelResultado.setFont(new Font("Arial", Font.BOLD, 16));
         campoValor = new JTextField(20);
         JPanel painelBotoes = new JPanel(new FlowLayout());
+
+         // Opcional Configura o painelBotoes com BoxLayout vertical
+        painelBotoes.setLayout(new BoxLayout(painelBotoes, BoxLayout.Y_AXIS));
+
         JButton botaoCtoF = new JButton("Celsius → Fahrenheit");
         JButton botaoFtoC = new JButton("Fahrenheit → Celsius");
         JButton botaoRtoD = new JButton("Real → Dólar");
@@ -68,6 +72,17 @@ public class ConversorMultifuncional extends JFrame {
         painelBotoes.add(botaoFtoC);
         painelBotoes.add(botaoRtoD);
         painelBotoes.add(botaoDtoR);
+        painelBotoes.add(botaoLimpar);
+
+         // Opcional: Adiciona os botões com espaçamento de 8 pixels
+        painelBotoes.add(botaoCtoF);
+        painelBotoes.add(Box.createVerticalStrut(8)); // Espaçamento de 8 pixels
+        painelBotoes.add(botaoFtoC);
+        painelBotoes.add(Box.createVerticalStrut(8));
+        painelBotoes.add(botaoRtoD);
+        painelBotoes.add(Box.createVerticalStrut(8));
+        painelBotoes.add(botaoDtoR);
+        painelBotoes.add(Box.createVerticalStrut(8));
         painelBotoes.add(botaoLimpar);
 
         add(labelResultado, BorderLayout.NORTH);
