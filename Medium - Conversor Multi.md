@@ -32,28 +32,44 @@ O exercício inclui tarefas, como personalização da interface, validação ava
 
 **Código base (para orientação)**:
 ```java
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+package br.com.java_learning;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.HeadlessException;
+
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class ConversorMultifuncional extends JFrame {
-    private JTextField campoValor;
-    private JLabel labelResultado;
+
+    private final JTextField campoValor;
+    private final JLabel labelResultado;
 
     public ConversorMultifuncional() {
         setTitle("Conversor Multifuncional");
-        setSize(600, 500);
+        setSize(320, 270);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
-        getContentPane().setBackground(Color.WHITE);
+        getContentPane().setBackground(Color.white);
 
+        // Componentes da interface
         labelResultado = new JLabel("Resultado: ");
-        labelResultado.setFont(new Font("Arial", Font.BOLD, 16));
-        campoValor = new JTextField(20);
+        labelResultado.setFont(new Font("Arial", Font.BOLD, 18));
+        campoValor = new JTextField(10);
+        campoValor.setFont(new Font("Arial", Font.PLAIN, 16));
         JPanel painelBotoes = new JPanel(new FlowLayout());
 
-         // Opcional Configura o painelBotoes com BoxLayout vertical
+        // Opcional Configura o painelBotoes com BoxLayout vertical
         painelBotoes.setLayout(new BoxLayout(painelBotoes, BoxLayout.Y_AXIS));
 
         JButton botaoCtoF = new JButton("Celsius → Fahrenheit");
@@ -74,7 +90,8 @@ public class ConversorMultifuncional extends JFrame {
         painelBotoes.add(botaoDtoR);
         painelBotoes.add(botaoLimpar);
 
-         // Opcional: Adiciona os botões com espaçamento de 8 pixels
+        // Opcional: Adiciona os botões com espaçamento de 8 pixels
+        painelBotoes.add(Box.createHorizontalStrut(8));
         painelBotoes.add(botaoCtoF);
         painelBotoes.add(Box.createVerticalStrut(8)); // Espaçamento de 8 pixels
         painelBotoes.add(botaoFtoC);
@@ -84,6 +101,7 @@ public class ConversorMultifuncional extends JFrame {
         painelBotoes.add(botaoDtoR);
         painelBotoes.add(Box.createVerticalStrut(8));
         painelBotoes.add(botaoLimpar);
+        painelBotoes.add(Box.createVerticalStrut(8));
 
         add(labelResultado, BorderLayout.NORTH);
         add(campoValor, BorderLayout.CENTER);
@@ -95,46 +113,35 @@ public class ConversorMultifuncional extends JFrame {
     private void converter(String tipo) {
         try {
             double valor = Double.parseDouble(campoValor.getText());
-            double resultado = 0;
-            String mensagem = "";
+            double resultado;
+            String message = "";
+
             switch (tipo) {
                 case "CtoF":
-                    if (valor < -100 || valor > 100) {
-                        JOptionPane.showMessageDialog(null, "Temperatura deve estar entre -100°C e 100°C!", "Erro", JOptionPane.ERROR_MESSAGE);
-                        return;
-                    }
                     resultado = (valor * 9 / 5) + 32;
-                    mensagem = valor + "°C = " + resultado + "°F";
+                    message = String.format("%.1f °C = %.1f °F", valor, resultado);
                     break;
                 case "FtoC":
-                    if (valor < -148 || valor > 212) {
-                        JOptionPane.showMessageDialog(null, "Temperatura deve estar entre -148°F e 212°F!", "Erro", JOptionPane.ERROR_MESSAGE);
-                        return;
-                    }
                     resultado = (valor - 32) * 5 / 9;
-                    mensagem = valor + "°F = " + resultado + "°C";
+                    message = String.format("%.1f °F = %.1f °C", valor, resultado);
                     break;
                 case "RtoD":
-                    if (valor < 0) {
-                        JOptionPane.showMessageDialog(null, "Valor deve ser positivo!", "Erro", JOptionPane.ERROR_MESSAGE);
-                        return;
-                    }
-                    resultado = valor / 5.5;
-                    mensagem = "R$" + valor + " = $" + resultado;
+                    resultado = valor / 5.25; // Exemplo de taxa de conversão
+                    message = String.format("R$ %.2f = US$ %.2f", valor, resultado);
                     break;
                 case "DtoR":
-                    if (valor < 0) {
-                        JOptionPane.showMessageDialog(null, "Valor deve ser positivo!", "Erro", JOptionPane.ERROR_MESSAGE);
-                        return;
-                    }
-                    resultado = valor * 5.5;
-                    mensagem = "$" + valor + " = R$" + resultado;
+                    resultado = valor * 5.25; // Exemplo de taxa de conversão
+                    message = String.format("US$ %.2f = R$ %.2f", valor, resultado);
                     break;
+                default:
+                    throw new IllegalArgumentException("Tipo de conversão desconhecido.");
             }
-            labelResultado.setText("Resultado: " + mensagem);
-            JOptionPane.showMessageDialog(null, mensagem, "Conversão", JOptionPane.INFORMATION_MESSAGE);
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Digite um número válido!", "Erro", JOptionPane.ERROR_MESSAGE);
+            labelResultado.setText("Resultado: " + message);
+            JOptionPane.showMessageDialog(null, message, "Conversão", JOptionPane.INFORMATION_MESSAGE);
+        } catch (HeadlessException | IllegalArgumentException e) {
+            // System.err.println("Erro ao converter: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro ao converter: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+            labelResultado.setText("Resultado: Erro na conversão");
         }
     }
 
@@ -146,6 +153,7 @@ public class ConversorMultifuncional extends JFrame {
     public static void main(String[] args) {
         new ConversorMultifuncional();
     }
+
 }
 ```
 
@@ -192,3 +200,4 @@ public class ConversorMultifuncional extends JFrame {
 **Justificativa do Tempo**:
 - Cada exercício foi expandido com validações detalhadas, personalização visual, funcionalidades extras (ex.: histórico, salvamento em arquivo) e documentação (relatórios, diagramas).
 - A combinação de implementação, testes e documentação garante que cada exercício ocupe 2 horas, considerando o ritmo de alunos de Ensino Médio/Técnico.
+
