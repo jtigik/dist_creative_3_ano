@@ -64,7 +64,7 @@ public class SistemaVotacao extends JFrame {
         botaoResultados.addActionListener(e -> exibirResultados());
         botaoZerar.addActionListener(e -> zerarVotacao());
 
-        painelCandidatos.add(comboBoxCandidatos);
+        painelCandidatos.add(comboCandidatos);
         painelBotoes.add(botaoVotar);
         painelBotoes.add(botaoResultados);
         painelBotoes.add(botaoZerar);
@@ -161,3 +161,4 @@ public class SistemaVotacao extends JFrame {
 - O exercício inclui implementação complexa (ex.: regex, temporizador, salvamento em arquivo), validações detalhadas, personalização visual e documentação (relatórios, diagramas).
 
 - O tempo é distribuído para equilibrar codificação, testes e documentação, adequando-se ao nível dos alunos.
+
