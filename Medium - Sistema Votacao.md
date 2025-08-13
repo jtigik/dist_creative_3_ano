@@ -85,9 +85,15 @@ public class SistemaVotacao extends JFrame {
         int confirm = JOptionPane.showConfirmDialog(null, "Confirmar voto em " + candidato + "?", "Confirmação", JOptionPane.YES_NO_OPTION);
         if (confirm == JOptionPane.YES_OPTION) {
             switch (candidato) {
-                case "Candidato A": votos[0]++; break;
-                case "Candidato B": votos[1]++; break;
-                case "Candidato C": votos[2]++; break;
+                case "Candidato A":
+                    votos[0]++;
+                    break;
+                case "Candidato B":
+                    votos[1]++;
+                    break;
+                case "Candidato C":
+                    votos[2]++;
+                    break;
             }
             labelResultados.setText("Votos: A=" + votos[0] + ", B=" + votos[1] + ", C=" + votos[2]);
             JOptionPane.showMessageDialog(null, "Voto registrado!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
@@ -161,4 +167,5 @@ public class SistemaVotacao extends JFrame {
 - O exercício inclui implementação complexa (ex.: regex, temporizador, salvamento em arquivo), validações detalhadas, personalização visual e documentação (relatórios, diagramas).
 
 - O tempo é distribuído para equilibrar codificação, testes e documentação, adequando-se ao nível dos alunos.
+
 
