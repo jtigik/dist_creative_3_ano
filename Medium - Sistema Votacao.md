@@ -38,7 +38,7 @@ public class SistemaVotacao extends JFrame {
 
     public SistemaVotacao() {
         setTitle("Sistema de Votação");
-        setSize(600, 500);
+        setSize(400, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
@@ -167,5 +167,6 @@ public class SistemaVotacao extends JFrame {
 - O exercício inclui implementação complexa (ex.: regex, temporizador, salvamento em arquivo), validações detalhadas, personalização visual e documentação (relatórios, diagramas).
 
 - O tempo é distribuído para equilibrar codificação, testes e documentação, adequando-se ao nível dos alunos.
+
 
 
