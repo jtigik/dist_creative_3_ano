@@ -55,6 +55,7 @@ public class SistemaVotacao extends JFrame {
         comboCandidatos = new JComboBox<>(candidatos);
         comboCandidatos.setFont(new Font("Arial", Font.PLAIN, 14));
         JPanel painelBotoes = new JPanel(new FlowLayout());
+        JPanel painelCandidatos = new JPanel(new FlowLayout());
         JButton botaoVotar = new JButton("Votar");
         JButton botaoResultados = new JButton("Exibir Resultados");
         JButton botaoZerar = new JButton("Zerar Votação");
@@ -63,12 +64,13 @@ public class SistemaVotacao extends JFrame {
         botaoResultados.addActionListener(e -> exibirResultados());
         botaoZerar.addActionListener(e -> zerarVotacao());
 
+        painelCandidatos.add(comboBoxCandidatos);
         painelBotoes.add(botaoVotar);
         painelBotoes.add(botaoResultados);
         painelBotoes.add(botaoZerar);
 
         add(labelResultados, BorderLayout.NORTH);
-        add(comboCandidatos, BorderLayout.CENTER);
+        add(painelCandidatos, BorderLayout.CENTER);
         add(painelBotoes, BorderLayout.SOUTH);
 
         setVisible(true);
@@ -157,4 +159,5 @@ public class SistemaVotacao extends JFrame {
 
 **Justificativa do Tempo**:
 - O exercício inclui implementação complexa (ex.: regex, temporizador, salvamento em arquivo), validações detalhadas, personalização visual e documentação (relatórios, diagramas).
+
 - O tempo é distribuído para equilibrar codificação, testes e documentação, adequando-se ao nível dos alunos.
