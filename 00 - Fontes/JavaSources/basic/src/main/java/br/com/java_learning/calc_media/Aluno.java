@@ -41,7 +41,11 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "Aluno: " + getNome() + "\nNota 1: " + getNota1() + ", Nota 2: " + getNota2() + ", Nota 3: " + getNota3();
+        return "Aluno: " + getNome()
+                + "\nNota 1: " + getNota1()
+                + ", Nota 2: " + getNota2()
+                + ", Nota 3: " + getNota3()
+                + "\nMédia: " + calcularMedia();
     }
 
 }
