@@ -1,0 +1,4 @@
+Aluno [getNome()=Jose, getNota1()=7.8, getNota2()=6.9]
+Aluno: Jose, Nota 18.1, Nota 27.9, Nota 3:6.4
+Aluno: Jose
+Nota 1: 8.4, Nota 2: 8.1, Nota 3: 6.9

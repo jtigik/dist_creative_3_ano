@@ -1,0 +1,4 @@
+Resultados:
+Candidato A: 0
+Candidato B: 1
+Candidato C: 2
